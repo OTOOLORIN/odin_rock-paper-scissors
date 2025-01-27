@@ -37,6 +37,12 @@
             */
             userNumericChoice = parseInt(prompt("Rock, Paper, or Scissors?\n\nType a number to decide\n1 - rock\n2 - paper\n3 - scissors"))
 
+            // return the text equivalent of human choice
+            function getHumanChoice(userChoice) {
+                let userTextChoice;
+                userTextChoice = userChoice === 1 ? "rock" : userChoice === 2 ? "paper" : userChoice === 3 ? "Scissors" : null;
+                return userTextChoice;
+            }
         </script>
     </head>
     <body>

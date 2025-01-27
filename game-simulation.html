@@ -66,11 +66,11 @@
                 } else if (userChoice === computerChoice) {
                     console.log("It's a tie!");
                 } else if (userWinningCondition) {
-                    console.log(`You win! ${userChoice} beats ${computerChoice}.`);
+                    console.log(`You win this round, ${userChoice} beats ${computerChoice}!`);
                     // update user new score 
                     userScore += 1;
                 } else {
-                    console.log(`You lose. ${computerChoice} beats ${userChoice}.`);
+                    console.log(`You lose this round, ${computerChoice} beats ${userChoice}.`);
                     // update computer score
                     computerScore += 1;
                 }

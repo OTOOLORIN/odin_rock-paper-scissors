@@ -44,13 +44,32 @@
             // return the text equivalent of human choice
             function getHumanChoice(userChoice) {
                 let userTextChoice;
-                userTextChoice = userChoice === 1 ? "rock" : userChoice === 2 ? "paper" : userChoice === 3 ? "Scissors" : null;
+                userTextChoice = userChoice === 1 ? "rock" : userChoice === 2 ? "paper" : userChoice === 3 ? "scissors" : null;
                 return userTextChoice;
             }
 
             // play a round
             function playRound(userChoice, computerChoice) {
-                // if user 
+                // save the condition for a human to win the round
+                let userWinningCondition = (
+                (userChoice === "rock" && computerChoice === "scissors") || 
+                (userChoice === "scissors" && computerChoice === "paper") || 
+                (userChoice === "paper" && computerChoice === "rock"));
+                // do not start game if userChoice is invalid
+                if (userChoice === null) {
+                    console.log("Type a valid number.");
+                // check if the round is a tie
+                } else if (userChoice === computerChoice) {
+                    console.log("It's a tie!");
+                } else if (userWinningCondition) {
+                    console.log(`You win! ${userChoice} beats ${computerChoice}.`);
+                    // update user new score 
+                    userScore += 1;
+                } else {
+                    console.log(`You lose. ${computerChoice} beats ${userChoice}.`);
+                    // update computer score
+                    computerScore += 1;
+                }
             }
         </script>
     </head>

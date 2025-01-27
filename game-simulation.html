@@ -13,6 +13,10 @@
             let userScore = 0;
             let computerScore  = 0;
 
+            // create variables to store players' choices
+            let humanSelection = getHumanChoice();
+            let computerSelection = getComputerChoice(userChoice);
+
             // get computer choice
             function getComputerChoice() {
                 // save computer choice
@@ -71,6 +75,7 @@
                     computerScore += 1;
                 }
             }
+
         </script>
     </head>
     <body>

@@ -39,13 +39,18 @@
                 2 - "paper"
                 3 - "scissors"
             */
-            userNumericChoice = parseInt(prompt("Rock, Paper, or Scissors?\n\nType a number to decide\n1 - rock\n2 - paper\n3 - scissors"))
+            userNumericChoice = parseInt(prompt("Rock, Paper, Scissors?\n\nType a number to shoot!\n1 - rock\n2 - paper\n3 - scissors"))
 
             // return the text equivalent of human choice
             function getHumanChoice(userChoice) {
                 let userTextChoice;
                 userTextChoice = userChoice === 1 ? "rock" : userChoice === 2 ? "paper" : userChoice === 3 ? "Scissors" : null;
                 return userTextChoice;
+            }
+
+            // play a round
+            function playRound(userChoice, computerChoice) {
+                // if user 
             }
         </script>
     </head>

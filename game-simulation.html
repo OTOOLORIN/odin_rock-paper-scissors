@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="'en">
+    <head>
+        <title>Rock, Paper, Scissors: A computer opponent</title>
+        <meta charset = 'utf-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            // print welcome message to the user
+            console.log("Hi there! Welcome to the game\nYou'll be playing against a computer.\nMay the gods favor you!"
+            );
+
+            // get computer choice
+            function getComputerChoice() {
+                // save computer choice
+                let computerChoice;
+                computerChoice = Math.floor(Math.random()*3) + 1;
+                // console.log(computerChoice);
+
+                /* translate computer choice to game language
+                1 - "rock"
+                2 - "paper"
+                3 - "scissors"
+                */
+               computerChoice = computerChoice === 1 ? "rock" : computerChoice === 2 ? "paper" : "scissors";
+            //    console.log(computerChoice);
+
+                return computerChoice;
+
+            }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

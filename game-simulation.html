@@ -15,7 +15,7 @@
 
             // create variables to store players' choices
             let humanSelection = getHumanChoice();
-            let computerSelection = getComputerChoice(userChoice);
+            let computerSelection = getComputerChoice();
 
             // get computer choice
             function getComputerChoice() {
@@ -36,18 +36,18 @@
 
             }
 
-            //get human choice
             
-            /*prompt user to enter the number 1, 2, or 3 to  play
+            function getHumanChoice() {
+                //get human choice
+            
+                /*prompt user to enter the number 1, 2, or 3 to  play
                 1 - "rock"
                 2 - "paper"
                 3 - "scissors"
-            */
-            userNumericChoice = parseInt(prompt("Rock, Paper, Scissors?\n\nType a number to shoot!\n1 - rock\n2 - paper\n3 - scissors"))
-
-            // return the text equivalent of human choice
-            function getHumanChoice(userChoice) {
+                */
+                userChoice = parseInt(prompt("Rock, Paper, Scissors?\n\nType a number to shoot!\n1 - rock\n2 - paper\n3 - scissors"))
                 let userTextChoice;
+                // return the text equivalent of human choice
                 userTextChoice = userChoice === 1 ? "rock" : userChoice === 2 ? "paper" : userChoice === 3 ? "scissors" : null;
                 return userTextChoice;
             }
@@ -75,7 +75,6 @@
                     computerScore += 1;
                 }
             }
-
         </script>
     </head>
     <body>

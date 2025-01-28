@@ -75,6 +75,18 @@
             // create variables to store players' choices
             const humanSelection = getHumanChoice;
             const computerSelection = getComputerChoice;
+
+            // playRound(getHumanChoice(), getComputerChoice());
+            // play a game (five rounds)
+            function playGame() {
+                playRound(humanSelection(), computerSelection());
+                playRound(humanSelection(), computerSelection());
+                playRound(humanSelection(), computerSelection());
+                playRound(humanSelection(), computerSelection());
+                playRound(humanSelection(), computerSelection());
+            }
+
+            playGame();
         </script>
     </head>
     <body>

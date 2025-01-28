@@ -44,7 +44,7 @@
                 userChoice = parseInt(prompt("Rock, Paper, Scissors?\n\nType a number to shoot!\n1 - rock\n2 - paper\n3 - scissors"))
                 let userTextChoice;
                 // return the text equivalent of human choice
-                userTextChoice = userChoice === 1 ? "rock" : userChoice === 2 ? "paper" : userChoice === 3 ? "scissors" : null;
+                userTextChoice = userChoice === 1 ? "rock" : userChoice === 2 ? "paper" : userChoice === 3 ? "scissors" :null;
                 return userTextChoice;
             }
 
@@ -56,8 +56,9 @@
                 (userChoice === "scissors" && computerChoice === "paper") || 
                 (userChoice === "paper" && computerChoice === "rock"));
                 // do not start game if userChoice is invalid
-                if (userChoice === null) {
-                    console.log("Type a valid number.");
+                if (!userChoice) {
+                    computerScore += 1;
+                    console.log("Type a valid number, you lose this round.");
                 // check if the round is a tie
                 } else if (userChoice === computerChoice) {
                     console.log(`It's a tie, ${userChoice} = ${computerChoice}.\n`);

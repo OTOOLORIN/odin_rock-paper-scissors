@@ -91,11 +91,19 @@
                 scoreBoard();
             }
 
+            playGame();
+            // announce the winner
+            if (userScore > computerScore) {
+                console.log("You win!");
+            } else if(userScore < computerScore) {
+                console.log("You lose.");
+            } else {
+                console.log("It's a tie.")
+            }
             // create a scoreboard
             function scoreBoard() {
                 console.log(`Human - ${userScore}        Computer - ${computerScore}`);
             }
-            playGame();
         </script>
     </head>
     <body>

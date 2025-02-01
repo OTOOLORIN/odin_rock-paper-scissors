@@ -6,6 +6,17 @@ console.log("Hi there! Welcome to the game\nYou'll be playing against a computer
 let userScore = 0;
 let computerScore  = 0;
 
+const humanScoreBoard = document.querySelector('#human');
+const computerScoreBoard = document.querySelector('#computer')
+const humanScoreUpdate = document.createElement('span');
+const computerScoreUpdate = document.createElement('span');
+
+humanScoreUpdate.textContent = `${userScore}`;
+computerScoreUpdate.textContent = `: ${computerScore}`;
+
+humanScoreBoard.append(humanScoreUpdate);
+computerScoreBoard.append(computerScoreUpdate);
+
 // get computer choice
 function getComputerChoice() {
     // save computer choice
@@ -26,34 +37,17 @@ function getComputerChoice() {
 }
 
 
-function getHumanChoice() {
-    //get human choice
+// extract the result from a round played
+function roundResult(userChoice, computerChoice) {
 
-    /*prompt user to enter the number 1, 2, or 3 to  play
-    1 - "rock"
-    2 - "paper"
-    3 - "scissors"
-    */
-    userChoice = parseInt(prompt("Rock, Paper, Scissors?\n\nType a number to shoot!\n1 - rock\n2 - paper\n3 - scissors"))
-    let userTextChoice;
-    // return the text equivalent of human choice
-    userTextChoice = userChoice === 1 ? "rock" : userChoice === 2 ? "paper" : userChoice === 3 ? "scissors" :null;
-    return userTextChoice;
-}
-
-// create a function to play a round
-function playRound(userChoice, computerChoice) {
     // save the condition for a human to win the round
     let userWinningCondition = (
     (userChoice === "rock" && computerChoice === "scissors") || 
     (userChoice === "scissors" && computerChoice === "paper") || 
     (userChoice === "paper" && computerChoice === "rock"));
-    // do not start game if userChoice is invalid
-    if (!userChoice) {
-        computerScore += 1;
-        console.log("Type a valid number, you lose this round.");
-    // check if the round is a tie
-    } else if (userChoice === computerChoice) {
+    
+
+    if (userChoice === computerChoice) {
         console.log(`It's a tie, ${userChoice} = ${computerChoice}.\n`);
     } else if (userWinningCondition) {
         console.log(`You win this round, ${userChoice} beats ${computerChoice}!\n`);
@@ -64,29 +58,25 @@ function playRound(userChoice, computerChoice) {
         // update computer score
         computerScore += 1;
     }
+    humanScoreUpdate.textContent = `${userScore}`;
+    computerScoreUpdate.textContent = `${computerScore}`;
 }
 
-// create variables to store players' choices
-const humanSelection = getHumanChoice;
-const computerSelection = getComputerChoice;
 
-// playRound(getHumanChoice(), getComputerChoice());
-// play a game (five rounds)
+function playRound() {
+    const playerOptions = document.querySelector('.player-selection-container');
+    playerOptions.addEventListener('click', (option) => {
+        const playerChoice = option.target.id;
+        const computerChoice = getComputerChoice();
 
-function playGame() {
-    playRound(humanSelection(), computerSelection());
-    scoreBoard();
-    playRound(humanSelection(), computerSelection());
-    scoreBoard();
-    playRound(humanSelection(), computerSelection());
-    scoreBoard();
-    playRound(humanSelection(), computerSelection());
-    scoreBoard();
-    playRound(humanSelection(), computerSelection());
-    scoreBoard();
+        roundResult(playerChoice, computerChoice);
+     }
+    
+    )
 }
 
-playGame();
+playRound();
+
 // announce the winner
 if (userScore > computerScore) {
     console.log("\n\nYou win!");

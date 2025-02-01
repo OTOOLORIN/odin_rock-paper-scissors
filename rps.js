@@ -7,6 +7,7 @@ const computerScoreBoard = document.querySelector('#computer')
 const humanScoreUpdate = document.createElement('span');
 const computerScoreUpdate = document.createElement('span');
 const winner = document.querySelector('#winner');
+const restartButton = document.createElement('button');
 
 humanScoreUpdate.textContent = `${userScore}`;
 computerScoreUpdate.textContent = `${computerScore}`;
@@ -86,12 +87,17 @@ function restartGame() {
     if (userScore === 5 || computerScore === 5) {
         userScore = 0;
         computerScore = 0;
-        const restartButton = document.createElement('button');
         restartButton.textContent = 'Restart Game';
         winner.appendChild(restartButton);
+        restartButton.addEventListener('click', () => {
+            winner.textContent = '';
+            humanScoreUpdate.textContent = `${userScore}`;
+            computerScoreUpdate.textContent = `${computerScore}`;
+        })
     }
-}
+    }
 
 
 playRound();
+
 // THE END

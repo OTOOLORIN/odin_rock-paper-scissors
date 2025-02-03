@@ -8,9 +8,11 @@ let noOfRounds = 0;
 
 const roundDisplay = document.createElement('span');
 const header = document.querySelector('.intro-container');
+const computerArena = document.querySelector('.arena.computer')
 const userOptions = document.querySelector('.selection-container')
 const userScoreDisplay = document.querySelector('.score-display.user');
 const computerScoreDisplay = document.querySelector('.score-display.computer');
+const buttons = document.querySelectorAll('.player-arena button')
 const userChoiceDisplay = document.querySelector('.choice-display.user');
 const computerChoiceDisplay = document.querySelector('.choice-display.computer');
 const userChoiceValue = document.createElement('span');
@@ -23,7 +25,7 @@ userChoiceDisplay.appendChild(userChoiceValue);
 computerChoiceDisplay.appendChild(computerChoiceValue);
 
 function getComputerChoice () {
-    const computerNumeriChoice = Math.floor(Math.random() * 4);
+    const computerNumeriChoice = Math.floor(Math.random() * 3) + 1;
     let computerTextChoice;
 
     switch (computerNumeriChoice) {
@@ -41,7 +43,6 @@ function getComputerChoice () {
 
 let userChoice;
 function getUserChoice () {
-    const buttons = document.querySelectorAll('.player-arena button')
 
     buttons.forEach((button) => {
         button.addEventListener('click', () => {

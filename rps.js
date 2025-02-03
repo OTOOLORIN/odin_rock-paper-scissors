@@ -8,10 +8,12 @@ let noOfRounds = 0;
 
 const roundDisplay = document.createElement('p');
 const header = document.querySelector('.intro-container');
+const userArena = document.querySelector('.player-arena')
+const userChoiceDisplay = document.createElement('span');
 
 roundDisplay.textContent = `Round ${noOfRounds}`;
 header.appendChild(roundDisplay);
-
+userArena.appendChild(userChoiceDisplay);
 
 function getComputerChoice () {
     const computerNumeriChoice = Math.floor(Math.random() * 4);
@@ -40,6 +42,7 @@ function getUserChoice () {
             roundDisplay.textContent = `Round ${noOfRounds}`;
 
             userChoice = button.id;
+            userChoiceDisplay.textContent = `Your choice: ${userChoice}`
             getWinner(userChoice, getComputerChoice());
         })
     })

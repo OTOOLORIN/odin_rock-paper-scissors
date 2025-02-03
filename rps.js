@@ -8,13 +8,13 @@ let noOfRounds = 0;
 
 const roundDisplay = document.createElement('p');
 const header = document.querySelector('.intro-container');
-const userArena = document.querySelector('.player-arena')
+const userOptions = document.querySelector('.selection-container')
 const userScoreDisplay = document.querySelector('.user-score-display');
 const userChoiceDisplay = document.createElement('span');
 
 roundDisplay.textContent = `Round ${noOfRounds}`;
 header.appendChild(roundDisplay);
-userArena.appendChild(userChoiceDisplay);
+userOptions.appendChild(userChoiceDisplay);
 
 function getComputerChoice () {
     const computerNumeriChoice = Math.floor(Math.random() * 4);

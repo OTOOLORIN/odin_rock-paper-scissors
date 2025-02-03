@@ -23,12 +23,13 @@ function getComputerChoice () {
 
 let userChoice;
 function getUserChoice () {
-    noOfRounds += 1;
     const buttons = document.querySelectorAll('.player-arena button')
 
     buttons.forEach((button) => {
         button.addEventListener('click', () => {
+            noOfRounds += 1;
             userChoice = button.id;
+            getWinner(userChoice, getComputerChoice());
         })
     })
 }
@@ -48,3 +49,5 @@ function getWinner (userChoice, computerChoice) {
     }
 
 }
+
+getUserChoice();

@@ -10,7 +10,7 @@ const roundDisplay = document.createElement('span');
 const header = document.querySelector('.intro-container');
 const userOptions = document.querySelector('.selection-container')
 const userScoreDisplay = document.querySelector('.user-score-display');
-const userChoiceDisplay = document.querySelector('#choice-display');
+const userChoiceDisplay = document.querySelector('.choice-display.user');
 const userChoiceValue = document.createElement('span');
 
 roundDisplay.textContent = `Round ${noOfRounds}`;

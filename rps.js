@@ -6,15 +6,16 @@ let noOfRounds = 0;
 
 // References to DOM nodes to be manipulated/created;
 
-const roundDisplay = document.createElement('p');
+const roundDisplay = document.createElement('span');
 const header = document.querySelector('.intro-container');
 const userOptions = document.querySelector('.selection-container')
 const userScoreDisplay = document.querySelector('.user-score-display');
-const userChoiceDisplay = document.createElement('span');
+const userChoiceDisplay = document.querySelector('#choice-display');
+const userChoiceValue = document.createElement('span');
 
 roundDisplay.textContent = `Round ${noOfRounds}`;
 header.appendChild(roundDisplay);
-userOptions.appendChild(userChoiceDisplay);
+userChoiceDisplay.appendChild(userChoiceValue);
 
 function getComputerChoice () {
     const computerNumeriChoice = Math.floor(Math.random() * 4);
@@ -43,7 +44,7 @@ function getUserChoice () {
             roundDisplay.textContent = `Round ${noOfRounds}`;
 
             userChoice = button.id;
-            userChoiceDisplay.textContent = `Your choice: ${userChoice}`
+            userChoiceValue.textContent = ` ${userChoice}`
             getWinner(userChoice, getComputerChoice());
             userScoreDisplay.textContent = `${userScore}`;
         })

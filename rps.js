@@ -9,6 +9,7 @@ let noOfRounds = 0;
 const roundDisplay = document.createElement('p');
 const header = document.querySelector('.intro-container');
 const userArena = document.querySelector('.player-arena')
+const userScoreDisplay = document.querySelector('.user-score-display');
 const userChoiceDisplay = document.createElement('span');
 
 roundDisplay.textContent = `Round ${noOfRounds}`;
@@ -44,6 +45,7 @@ function getUserChoice () {
             userChoice = button.id;
             userChoiceDisplay.textContent = `Your choice: ${userChoice}`
             getWinner(userChoice, getComputerChoice());
+            userScoreDisplay.textContent = `${userScore}`;
         })
     })
 }

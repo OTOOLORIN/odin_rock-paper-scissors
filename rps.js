@@ -13,11 +13,13 @@ const userScoreDisplay = document.querySelector('.user-score-display');
 const userChoiceDisplay = document.querySelector('.choice-display.user');
 const computerChoiceDisplay = document.querySelector('.choice-display.computer');
 const userChoiceValue = document.createElement('span');
+const computerChoiceValue = document.createElement('span');
 
 
 roundDisplay.textContent = `Round ${noOfRounds}`;
 header.appendChild(roundDisplay);
 userChoiceDisplay.appendChild(userChoiceValue);
+computerChoiceDisplay.appendChild(computerChoiceValue);
 
 function getComputerChoice () {
     const computerNumeriChoice = Math.floor(Math.random() * 4);
@@ -48,6 +50,7 @@ function getUserChoice () {
             userChoice = button.id;
             const computerChoice = getComputerChoice();
             userChoiceValue.textContent = ` ${userChoice}`;
+            computerChoiceValue.textContent = ` ${computerChoice}`;
             getWinner(userChoice, computerChoice);
             userScoreDisplay.textContent = `${userScore}`;
         })

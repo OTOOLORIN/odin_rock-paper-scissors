@@ -12,7 +12,6 @@ const computerArena = document.querySelector('.arena.computer')
 const userOptions = document.querySelector('.selection-container')
 const userScoreDisplay = document.querySelector('.score-display.user');
 const computerScoreDisplay = document.querySelector('.score-display.computer');
-const buttons = document.querySelectorAll('.player-arena button')
 const userChoiceDisplay = document.querySelector('.choice-display.user');
 const computerChoiceDisplay = document.querySelector('.choice-display.computer');
 const userChoiceValue = document.createElement('span');
@@ -41,25 +40,6 @@ function getComputerChoice () {
     return computerTextChoice;
 }
 
-let userChoice;
-function getUserChoice () {
-
-    buttons.forEach((button) => {
-        button.addEventListener('click', () => {
-            noOfRounds += 1;
-            roundDisplay.textContent = `Round ${noOfRounds}`;
-
-            userChoice = button.id;
-            const computerChoice = getComputerChoice();
-            userChoiceValue.textContent = ` ${userChoice}`;
-            computerChoiceValue.textContent = ` ${computerChoice}`;
-            getWinner(userChoice, computerChoice);
-            userScoreDisplay.textContent = `${userScore}`;
-            computerScoreDisplay.textContent = `${computerScore}`;
-        })
-    })
-}
-
 function getWinner (userChoice, computerChoice) {
     const userWinningCondition = 
                         ((userChoice === 'rock' && computerChoice === 'scissors') ||
@@ -74,6 +54,23 @@ function getWinner (userChoice, computerChoice) {
         computerScore +=  1;
     }
 
+    userScoreDisplay.textContent = `${userScore}`;
+    computerScoreDisplay.textContent = `${computerScore}`;
 }
 
-getUserChoice();
+userOptions.addEventListener('click', (event) => {
+    const button = event.target;
+    const userChoice = button.id;
+    if (!userChoice) {
+        return;
+    }
+    console.log(userChoice)
+
+    noOfRounds += 1;
+    roundDisplay.textContent = `Round ${noOfRounds}`;
+
+    const computerChoice = getComputerChoice();
+    userChoiceValue.textContent = ` ${userChoice}`;
+    computerChoiceValue.textContent = ` ${computerChoice}`;
+    getWinner(userChoice, computerChoice);
+})

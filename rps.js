@@ -14,3 +14,14 @@ function getComputerChoice () {
     }
     return computerTextChoice;
 }
+
+let userChoice;
+function getUserChoice () {
+    const buttons = document.querySelectorAll('.player-arena button')
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            userChoice = button.id;
+        })
+    })
+}

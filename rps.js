@@ -2,6 +2,8 @@
 let userScore = 0;
 let computerScore = 0;
 
+let noOfRounds = 0;
+
 function getComputerChoice () {
     const computerNumeriChoice = Math.floor(Math.random() * 4);
     let computerTextChoice;

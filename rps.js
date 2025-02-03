@@ -4,6 +4,10 @@ let computerScore = 0;
 
 let noOfRounds = 0;
 
+// References to DOM nodes to be manipulated;
+const roundDisplay = document.querySelector('#round-display');
+roundDisplay.textContent = `Round ${noOfRounds}`;
+
 function getComputerChoice () {
     const computerNumeriChoice = Math.floor(Math.random() * 4);
     let computerTextChoice;
@@ -28,6 +32,8 @@ function getUserChoice () {
     buttons.forEach((button) => {
         button.addEventListener('click', () => {
             noOfRounds += 1;
+            roundDisplay.textContent = `Round ${noOfRounds}`;
+
             userChoice = button.id;
             getWinner(userChoice, getComputerChoice());
         })

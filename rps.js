@@ -1,6 +1,6 @@
-// initialize players' score
+// initialize players' scor
 let userScore = 0;
-let ccomputerScore = 0;
+let computerScore = 0;
 
 function getComputerChoice () {
     const computerNumeriChoice = Math.floor(Math.random() * 4);
@@ -28,4 +28,20 @@ function getUserChoice () {
             userChoice = button.id;
         })
     })
+}
+
+function getWinner (userChoice, computerChoice) {
+    const userWinningCondition = 
+                        ((userChoice === 'rock' && computerChoice === 'scissors') ||
+                        (userChoice === 'scissors' && computerChoice === 'paper') ||
+                        (userChoice === 'paper' && computerChoice === 'rock'));
+    if (userChoice === computerChoice) {
+
+    }
+    else if (userWinningCondition) {
+        userScore += 1;
+    } else {
+        computerScore +=  1;
+    }
+
 }

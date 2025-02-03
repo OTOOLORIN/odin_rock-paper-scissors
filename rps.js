@@ -4,9 +4,14 @@ let computerScore = 0;
 
 let noOfRounds = 0;
 
-// References to DOM nodes to be manipulated;
-const roundDisplay = document.querySelector('#round-display');
+// References to DOM nodes to be manipulated/created;
+
+const roundDisplay = document.createElement('p');
+const header = document.querySelector('.intro-container');
+
 roundDisplay.textContent = `Round ${noOfRounds}`;
+header.appendChild(roundDisplay);
+
 
 function getComputerChoice () {
     const computerNumeriChoice = Math.floor(Math.random() * 4);

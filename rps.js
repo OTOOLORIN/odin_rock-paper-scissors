@@ -10,6 +10,7 @@ const roundDisplay = document.createElement('span');
 const header = document.querySelector('.intro-container');
 const userOptions = document.querySelector('.selection-container')
 const userScoreDisplay = document.querySelector('.score-display.user');
+const computerScoreDisplay = document.querySelector('.score-display.computer');
 const userChoiceDisplay = document.querySelector('.choice-display.user');
 const computerChoiceDisplay = document.querySelector('.choice-display.computer');
 const userChoiceValue = document.createElement('span');
@@ -53,6 +54,7 @@ function getUserChoice () {
             computerChoiceValue.textContent = ` ${computerChoice}`;
             getWinner(userChoice, computerChoice);
             userScoreDisplay.textContent = `${userScore}`;
+            computerScoreDisplay.textContent = `${computerScore}`;
         })
     })
 }

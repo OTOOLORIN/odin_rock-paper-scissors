@@ -23,6 +23,7 @@ function getComputerChoice () {
 
 let userChoice;
 function getUserChoice () {
+    noOfRounds += 1;
     const buttons = document.querySelectorAll('.player-arena button')
 
     buttons.forEach((button) => {

@@ -64,7 +64,6 @@ userOptions.addEventListener('click', (event) => {
     if (!userChoice) {
         return;
     }
-    console.log(userChoice)
 
     noOfRounds += 1;
     roundDisplay.textContent = `Round ${noOfRounds}`;

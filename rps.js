@@ -61,13 +61,6 @@ function getWinner (userChoice, computerChoice) {
     computerScoreDisplay.textContent = `${computerScore}`;
 }
 
-function resetGame() {
-    userScore = 0;
-    computerScore = 0;
-    noOfRounds = 0;
-    userChoiceValue.textContent = '';
-    computerChoiceValue.textContent = '';
-}
 
 function determineGameWinner (userScore, computerScore) {
     const winningPoint = 5;

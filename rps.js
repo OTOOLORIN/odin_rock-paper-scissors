@@ -64,16 +64,16 @@ function getWinner (userChoice, computerChoice) {
     computerScoreDisplay.textContent = `${computerScore}`;
 }
 
-function resetGame() {
+function resetGameValues () {
     userScore = 0;
     computerScore = 0;
     noOfRounds = 0;
+}
+function resetGame() {
+    resetGameValues();
     body.appendChild(resetBtn);
 resetBtn.addEventListener('click', () => {
-    resetGame();
-    userScore = 0;
-    computerScore = 0;
-    noOfRounds = 0;
+    resetGameValues()
     winnerDisplayMessage.textContent = '';
     userChoiceValue.textContent = '';
     computerChoiceValue.textContent = '';

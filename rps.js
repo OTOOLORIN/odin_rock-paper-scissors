@@ -21,6 +21,8 @@ const winnerDisplayMessage = document.createElement('span');
 const resetBtn = document.createElement('button');
 resetBtn.setAttribute('class', 'restart-btn');
 roundDisplay.setAttribute('class', 'round-display');
+userChoiceValue.setAttribute('class', 'player-option');
+computerChoiceValue.setAttribute('class', 'player-option');
 const body = document.querySelector('body');
 winnerDisplay.appendChild(winnerDisplayMessage);
 

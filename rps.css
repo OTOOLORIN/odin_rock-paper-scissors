@@ -14,6 +14,8 @@ body {
     font-size: 1.6em;
     color: #F8F8F2;
     font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
 }
 
 .intro-container {
@@ -23,11 +25,11 @@ body {
 
 .game-container {
     max-width: 40em;
-    min-width: 20em;
+    min-width: 22em;
+    padding-left: 1em;
     border-radius: 2em 1em;
-    padding-left: 2em;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-content: center;
     width: 30%;
     height: auto;
@@ -37,23 +39,78 @@ body {
 
 .arena {
     margin-top: 2.5em;
-    /* border: 2px solid red; */
+    max-width: 300px;
     padding-top: 1.5em;
     flex-wrap: wrap;
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 0.8em;
 }
 
 .choice-display {
     margin-top: 0.5em;
 }
 .selection-container button {
+    margin-right: 0.5em;
+    border-radius: 5px;
     width: 2em;
     height: 2em;
 }
 
+#rock {
+    background-color: #FF6B6B;
+}
+
+#paper {
+    background-color: #4ECDC4;
+}
+
+#scissors {
+    background-color: #FFB400;
+}
 .score-display {
     margin-top: -0.5em;
+    text-align: right;
+    width: 55%;
+}
+
+#winner-display {
+    margin-top: 0.5em;
+    height: 1.5em;
+    width: 4.5em;
+    font-weight: bold;
+    font-size: 1em;
+
+}
+
+.restart-btn {
+    width: 150px;
+    height: 30px;
     text-align: center;
+    background: #1E1E2E;
+    color:#F8F8F2;
+    margin: 0.5em  auto 0 auto;
+    padding: 0.4em;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.restart-btn:hover {
+    background: #FFB347;
+    cursor: pointer;
+}
+
+#rock:hover,
+#paper:hover,
+#scissors.hover {
+    cursor: pointer;
+}
+
+.round-display {
+    position: absolute;
+    color: #F8F8F2;
+    font-weight: bold;
+    top: 9.5em;
+    left:45em;
 }

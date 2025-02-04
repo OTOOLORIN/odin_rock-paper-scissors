@@ -86,7 +86,7 @@ body {
 #winner-display {
     margin-top: 0.5em;
     height: 1.5em;
-    width: 4.5em;
+    width: 5.5em;
     font-weight: bold;
     font-size: 1em;
 
@@ -122,4 +122,14 @@ body {
     font-weight: bold;
     top: 12.5em;
     left:60em;
+}
+
+.winner-color {
+    font-size: 22px;
+    color: #06D6A0;
+}
+
+.loser-color {
+    font-size: 22px;
+    color: #EF476F;
 }

@@ -19,11 +19,13 @@ const computerChoiceValue = document.createElement('span');
 const winnerDisplay = document.querySelector('#winner-display');
 const winnerDisplayMessage = document.createElement('span');
 const resetBtn = document.createElement('button');
+resetBtn.setAttribute('class', 'restart-btn');
+roundDisplay.setAttribute('class', 'round-display');
 const body = document.querySelector('body');
 winnerDisplay.appendChild(winnerDisplayMessage);
 
 
-roundDisplay.textContent = `Round ${noOfRounds}`;
+roundDisplay.textContent = `Round: ${noOfRounds}`;
 header.appendChild(roundDisplay);
 userChoiceDisplay.appendChild(userChoiceValue);
 computerChoiceDisplay.appendChild(computerChoiceValue);
@@ -79,7 +81,7 @@ resetBtn.addEventListener('click', () => {
     computerChoiceValue.textContent = '';
     userScoreDisplay.textContent = '0';
     computerScoreDisplay.textContent = '0';
-    roundDisplay.textContent = 'Round 0';
+    roundDisplay.textContent = 'Round: 0';
     body.removeChild(resetBtn);
 })
 }
@@ -107,7 +109,7 @@ userOptions.addEventListener('click', (event) => {
     }
 
     noOfRounds++;
-    roundDisplay.textContent = `Round ${noOfRounds}`;
+    roundDisplay.textContent = `Round: ${noOfRounds}`;
 
     const computerChoice = getComputerChoice();
     userChoiceValue.textContent = ` ${userChoice}`;

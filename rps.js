@@ -80,6 +80,7 @@ resetBtn.addEventListener('click', () => {
     userScoreDisplay.textContent = '';
     computerScoreDisplay.textContent = '';
     roundDisplay.textContent = 'Round 0';
+    body.removeChild(resetBtn);
 })
 }
 

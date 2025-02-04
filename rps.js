@@ -66,6 +66,13 @@ function getWinner (userChoice, computerChoice) {
     computerScoreDisplay.textContent = `${computerScore}`;
 }
 
+function titleCaseOption (option) {
+    const firstLetter = option[0].toUpperCase();
+    const otherLetters = option.slice(1);
+    return firstLetter + otherLetters
+
+}
+
 function resetGameValues () {
     userScore = 0;
     computerScore = 0;
@@ -110,10 +117,12 @@ userOptions.addEventListener('click', (event) => {
 
     noOfRounds++;
     roundDisplay.textContent = `Round: ${noOfRounds}`;
-
     const computerChoice = getComputerChoice();
-    userChoiceValue.textContent = ` ${userChoice}`;
-    computerChoiceValue.textContent = ` ${computerChoice}`;
+
+    const computerChoiceTitled = titleCaseOption(computerChoice);
+    const userChoiceTitled = titleCaseOption(userChoice);
+    userChoiceValue.textContent = ` ${userChoiceTitled}`;
+    computerChoiceValue.textContent = ` ${computerChoiceTitled}`;
     getWinner(userChoice, computerChoice);
     determineGameWinner(userScore, computerScore);
 })

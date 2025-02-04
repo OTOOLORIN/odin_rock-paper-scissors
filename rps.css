@@ -9,5 +9,15 @@ html {
 }
 
 body {
+    padding-top: 7em;
     font-size: 1.6em;
+    color: #F8F8F2;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.game-container {
+    width: 50%;
+    height: auto;
+    background-color: #1E1E2E;
+    margin: 0 auto;
 }

@@ -81,8 +81,7 @@ function determineGameWinner (userScore, computerScore) {
 
 userOptions.addEventListener('click', (event) => {
     winnerDisplayMessage.textContent = '';
-    
-    console.log(event);
+
     noOfRounds++;
     roundDisplay.textContent = `Round ${noOfRounds}`;
     

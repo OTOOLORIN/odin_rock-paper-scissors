@@ -16,7 +16,6 @@ const userChoiceDisplay = document.querySelector('.choice-display.user');
 const computerChoiceDisplay = document.querySelector('.choice-display.computer');
 const userChoiceValue = document.createElement('span');
 const computerChoiceValue = document.createElement('span');
-const btns = document.querySelectorAll('.selection-container button')
 
 
 roundDisplay.textContent = `Round ${noOfRounds}`;
@@ -57,6 +56,14 @@ function getWinner (userChoice, computerChoice) {
 
     userScoreDisplay.textContent = `${userScore}`;
     computerScoreDisplay.textContent = `${computerScore}`;
+}
+
+function resetGame() {
+    userScore = 0;
+    computerScore = 0;
+    noOfRounds = 0;
+    userChoiceValue.textContent = '';
+    computerChoiceValue.textContent = '';
 }
 
 function determineGameWinner (userScore, computerScore) {

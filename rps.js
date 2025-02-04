@@ -98,10 +98,12 @@ resetBtn.addEventListener('click', () => {
 function determineGameWinner (userScore, computerScore) {
     const winningPoint = 5;
     if ((userScore == winningPoint) && (computerScore < winningPoint)) {
-        winnerDisplayMessage.textContent = 'You won!'
+        winnerDisplayMessage.setAttribute('class', 'winner-color');
+        winnerDisplayMessage.textContent = 'You won.'
         resetGame();
     }
     if ((computerScore == winningPoint) && (userScore < winningPoint)) {
+        winnerDisplayMessage.setAttribute('class', 'loser-color')
         winnerDisplayMessage.textContent = 'You lose.'
         resetGame();
     }

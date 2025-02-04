@@ -55,6 +55,11 @@ body {
     height: 2em;
 }
 
+.player-option {
+    font-style: italic;
+    font-weight: 650;
+}
+
 #rock {
     background-color: #FF6B6B;
 }

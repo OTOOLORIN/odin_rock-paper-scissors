@@ -77,8 +77,8 @@ resetBtn.addEventListener('click', () => {
     winnerDisplayMessage.textContent = '';
     userChoiceValue.textContent = '';
     computerChoiceValue.textContent = '';
-    userScoreDisplay.textContent = '';
-    computerScoreDisplay.textContent = '';
+    userScoreDisplay.textContent = '0';
+    computerScoreDisplay.textContent = '0';
     roundDisplay.textContent = 'Round 0';
     body.removeChild(resetBtn);
 })

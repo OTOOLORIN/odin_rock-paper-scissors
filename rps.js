@@ -61,19 +61,28 @@ function getWinner (userChoice, computerChoice) {
     computerScoreDisplay.textContent = `${computerScore}`;
 }
 
+function resetGame() {
+    userScore = 0;
+    computerScore = 0;
+    noOfRounds = 0;
+}
 
 function determineGameWinner (userScore, computerScore) {
     const winningPoint = 5;
     if ((userScore == winningPoint) && (computerScore < winningPoint)) {
         winnerDisplayMessage.textContent = 'You won!'
+        resetGame();
     }
     if ((computerScore == winningPoint) && (userScore < winningPoint)) {
         winnerDisplayMessage.textContent = 'You lose.'
+        resetGame();
     }
 }
 
 userOptions.addEventListener('click', (event) => {
-
+    winnerDisplayMessage.textContent = '';
+    
+    console.log(event);
     noOfRounds++;
     roundDisplay.textContent = `Round ${noOfRounds}`;
     

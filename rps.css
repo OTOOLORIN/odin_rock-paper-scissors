@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    border: 0;
     margin: 0;
     padding: 0;
 }
@@ -21,7 +22,10 @@ body {
 }
 
 .game-container {
+    max-width: 40em;
+    min-width: 20em;
     border-radius: 2em 1em;
+    padding-left: 2em;
     display: flex;
     justify-content: space-evenly;
     align-content: center;
@@ -32,9 +36,24 @@ body {
 }
 
 .arena {
+    margin-top: 2.5em;
+    /* border: 2px solid red; */
     padding-top: 1.5em;
+    flex-wrap: wrap;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 1em;
 }
 
+.choice-display {
+    margin-top: 0.5em;
+}
+.selection-container button {
+    width: 2em;
+    height: 2em;
+}
+
+.score-display {
+    margin-top: -0.5em;
+    text-align: center;
+}

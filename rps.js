@@ -18,6 +18,8 @@ const userChoiceValue = document.createElement('span');
 const computerChoiceValue = document.createElement('span');
 const winnerDisplay = document.querySelector('#winner-display');
 const winnerDisplayMessage = document.createElement('span');
+const resetBtn = document.createElement('button');
+const body = document.querySelector('body');
 winnerDisplay.appendChild(winnerDisplayMessage);
 
 
@@ -25,6 +27,7 @@ roundDisplay.textContent = `Round ${noOfRounds}`;
 header.appendChild(roundDisplay);
 userChoiceDisplay.appendChild(userChoiceValue);
 computerChoiceDisplay.appendChild(computerChoiceValue);
+resetBtn.textContent = 'Reset Game'
 
 function getComputerChoice () {
     const computerNumeriChoice = Math.floor(Math.random() * 3) + 1;
@@ -65,6 +68,19 @@ function resetGame() {
     userScore = 0;
     computerScore = 0;
     noOfRounds = 0;
+    body.appendChild(resetBtn);
+resetBtn.addEventListener('click', () => {
+    resetGame();
+    userScore = 0;
+    computerScore = 0;
+    noOfRounds = 0;
+    winnerDisplayMessage.textContent = '';
+    userChoiceValue.textContent = '';
+    computerChoiceValue.textContent = '';
+    userScoreDisplay.textContent = '';
+    computerScoreDisplay.textContent = '';
+    roundDisplay.textContent = 'Round 0';
+})
 }
 
 function determineGameWinner (userScore, computerScore) {
@@ -82,14 +98,15 @@ function determineGameWinner (userScore, computerScore) {
 userOptions.addEventListener('click', (event) => {
     winnerDisplayMessage.textContent = '';
 
-    noOfRounds++;
-    roundDisplay.textContent = `Round ${noOfRounds}`;
     
     const button = event.target;
     const userChoice = button.id;
     if (!userChoice) {
         return;
     }
+
+    noOfRounds++;
+    roundDisplay.textContent = `Round ${noOfRounds}`;
 
     const computerChoice = getComputerChoice();
     userChoiceValue.textContent = ` ${userChoice}`;

@@ -16,6 +16,7 @@ const userChoiceDisplay = document.querySelector('.choice-display.user');
 const computerChoiceDisplay = document.querySelector('.choice-display.computer');
 const userChoiceValue = document.createElement('span');
 const computerChoiceValue = document.createElement('span');
+const btns = document.querySelectorAll('.selection-container button')
 
 
 roundDisplay.textContent = `Round ${noOfRounds}`;
@@ -58,18 +59,29 @@ function getWinner (userChoice, computerChoice) {
     computerScoreDisplay.textContent = `${computerScore}`;
 }
 
+function determineGameWinner (userScore, computerScore) {
+    const winningPoint = 5;
+    if ((userScore == winningPoint) && (computerScore < winningPoint)) {
+    }
+    if ((computerScore == winningPoint) && (userScore < winningPoint)) {
+        console.log('you lose');
+    }
+}
+
 userOptions.addEventListener('click', (event) => {
+
+    noOfRounds++;
+    roundDisplay.textContent = `Round ${noOfRounds}`;
+    
     const button = event.target;
     const userChoice = button.id;
     if (!userChoice) {
         return;
     }
 
-    noOfRounds += 1;
-    roundDisplay.textContent = `Round ${noOfRounds}`;
-
     const computerChoice = getComputerChoice();
     userChoiceValue.textContent = ` ${userChoice}`;
     computerChoiceValue.textContent = ` ${computerChoice}`;
     getWinner(userChoice, computerChoice);
+    determineGameWinner(userScore, computerScore);
 })

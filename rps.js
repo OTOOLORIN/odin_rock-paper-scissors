@@ -16,6 +16,9 @@ const userChoiceDisplay = document.querySelector('.choice-display.user');
 const computerChoiceDisplay = document.querySelector('.choice-display.computer');
 const userChoiceValue = document.createElement('span');
 const computerChoiceValue = document.createElement('span');
+const winnerDisplay = document.querySelector('#winner-display');
+const winnerDisplayMessage = document.createElement('span');
+winnerDisplay.appendChild(winnerDisplayMessage);
 
 
 roundDisplay.textContent = `Round ${noOfRounds}`;
@@ -69,9 +72,10 @@ function resetGame() {
 function determineGameWinner (userScore, computerScore) {
     const winningPoint = 5;
     if ((userScore == winningPoint) && (computerScore < winningPoint)) {
+        winnerDisplayMessage.textContent = 'You won!'
     }
     if ((computerScore == winningPoint) && (userScore < winningPoint)) {
-        console.log('you lose');
+        winnerDisplayMessage.textContent = 'You lose.'
     }
 }
 

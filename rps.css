@@ -117,11 +117,8 @@ body {
 }
 
 .round-display {
-    position: absolute;
-    color: #F8F8F2;
+    color: black;
     font-weight: bold;
-    top: 12.5em;
-    left:60em;
 }
 
 .winner-color {

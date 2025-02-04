@@ -27,7 +27,7 @@ roundDisplay.textContent = `Round ${noOfRounds}`;
 header.appendChild(roundDisplay);
 userChoiceDisplay.appendChild(userChoiceValue);
 computerChoiceDisplay.appendChild(computerChoiceValue);
-resetBtn.textContent = 'Reset Game'
+resetBtn.textContent = 'Restart Game'
 
 function getComputerChoice () {
     const computerNumeriChoice = Math.floor(Math.random() * 3) + 1;

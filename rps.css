@@ -24,9 +24,8 @@ body {
 }
 
 .game-container {
-    max-width: 40em;
+    max-width: 28em;
     min-width: 22em;
-    padding-left: 1em;
     border-radius: 2em 1em;
     display: flex;
     justify-content: center;
@@ -110,6 +109,6 @@ body {
     position: absolute;
     color: #F8F8F2;
     font-weight: bold;
-    top: 9.5em;
-    left:45em;
+    top: 10.5em;
+    left:60em;
 }
